@@ -5,9 +5,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class SpringbootBasicsApplication {
-    //Test
     public static void main(String[] args) {
-        SpringApplication.run(SpringbootBasicsApplication.class, args);
+        //SpringApplication.run(SpringbootBasicsApplication.class, args);
+        var orderService = new OrderService(new StripPaymentService());
+        orderService.placeOrder();
     }
 
 }
